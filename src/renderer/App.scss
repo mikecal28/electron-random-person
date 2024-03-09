@@ -1,0 +1,209 @@
+// /*
+//  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+//  *        See https://github.com/webpack-contrib/sass-loader#imports
+//  */
+// body {
+//   position: relative;
+//   color: white;
+//   height: 100vh;
+//   background: linear-gradient(
+//     200.96deg,
+//     #fedc2a -29.09%,
+//     #dd5789 51.77%,
+//     #7a2c9e 129.35%
+//   );
+//   font-family: sans-serif;
+//   overflow-y: hidden;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+html {
+  width: 100%;
+  height: 100%;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      background-color: white;
+      // border: 1px solid black;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: lightgray;
+    }
+
+    .page-container {
+      width: 100%;
+      height: 100vh;
+      background-color: lightgray;
+      display: grid;
+      grid-template-areas:
+        'a d'
+        'c d';
+      grid-template-columns: max(14vw, 140px) 1fr;
+      grid-template-rows: min(calc(2vh + 5vw), 60px) 1fr;
+
+      .header-wrapper {
+        grid-area: a;
+        border-bottom: 1px solid lightgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(20, 24, 58);
+        color: white;
+        font-size: min(calc(min(3vh, 8px) + 2.15vw), 20px);
+      }
+
+      .left-body-wrapper {
+        grid-area: c;
+        padding: 5% max(10%, 25px);
+        overflow-y: scroll;
+        background-color: rgb(20, 24, 58);
+
+        .participant-wrapper {
+          // border: 1px dashed blue;
+          display: grid;
+          grid-template-areas:
+            'a a b'
+            'c c d';
+          grid-template-columns: 7vw min(10vw, 5px);
+          grid-template-rows: min(8vh, 35px) min(8vh, 35px);
+          gap: min(1%, 5px);
+          font-size: 2vw;
+          color: white;
+          margin-bottom: 2vw;
+        }
+
+        .participant-name {
+          grid-area: a;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          // border: 1px dashed blue;
+        }
+
+        .weight-count {
+          grid-area: b;
+          display: flex;
+          align-items: flex-end;
+          // border: 1px dashed blue;
+        }
+
+        .weight-up {
+          grid-area: c;
+          // border: 1px dashed blue;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-start;
+
+          .up-icon-div {
+            height: 2vw;
+            width: 2vw;
+            // padding: 0px 2px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            p {
+              color: white;
+              position: relative;
+              top: -2px;
+              height: 5px;
+              width: 5px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+
+        .weight-down {
+          grid-area: d;
+          // border: 1px dashed blue;
+          display: flex;
+          align-items: flex-start;
+
+          .down-icon-div {
+            height: 2vw;
+            width: 2vw;
+            // padding: 0 4px;
+            // width: 10px;
+            background-color: limegreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            p {
+              color: white;
+              position: relative;
+              top: -0.5px;
+              left: 0.25px;
+              height: 5px;
+              width: 5px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+      }
+
+      .right-body-wrapper {
+        grid-area: d;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .random-person {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: max(25%, 150px);
+          // border: 2px solid lightblue;
+          font-size: 10vw;
+          color: rgb(20, 24, 58);
+          transition: color 0.5s;
+          // font-size: 8vw;
+        }
+
+        .start-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: min(40vw, 350px);
+          height: min(18%, 60px);
+          background-color: rgb(20, 24, 58);
+          color: white;
+          border-radius: min(1vw, 5px);
+          font-size: min(calc(0.5vh + 3vw), 32px);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
